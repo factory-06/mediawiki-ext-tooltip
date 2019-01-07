@@ -1,0 +1,55 @@
+{
+	"name": "MW_EXT_Tooltip",
+	"version": "1.0.0",
+	"author": [
+		"[https://kitsune.solar/ Kitsune Solar]",
+		"[https://metastore.pro/ METASTORE]",
+		"..."
+	],
+	"url": "https://metastore.pro/",
+	"descriptionmsg": "mw-ext-tooltip-desc",
+	"license-name": "[https://www.gnu.org/licenses/gpl-3.0.txt GPL-3.0]",
+	"type": "parserhook",
+	"require": {
+		"MediaWiki": ">= 1.31.0",
+		"extensions": {
+			"MW_EXT_Kernel": "*"
+		}
+	},
+	"AutoloadClasses": {
+		"MediaWiki\\Extension\\MetaStore\\MW_EXT_Tooltip": "MW_EXT_Tooltip.class.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"MediaWiki\\Extension\\MetaStore\\MW_EXT_Tooltip::onParserFirstCallInit"
+		],
+		"BeforePageDisplay": [
+			"MediaWiki\\Extension\\MetaStore\\MW_EXT_Tooltip::onBeforePageDisplay"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"MW_EXT_TooltipMagic": "MW_EXT_Tooltip.i18n.magic.php"
+	},
+	"MessagesDirs": {
+		"MW_EXT_Tooltip": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.mw.tooltip.styles": {
+			"styles": [
+				"styles/theme.css"
+			],
+			"position": "top",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "MW_EXT_Tooltip/modules"
+	},
+	"manifest_version": 2
+}
